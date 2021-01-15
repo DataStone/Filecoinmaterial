@@ -1,7 +1,7 @@
 ## [回目录](../README.md)
 
-## 6 Deal操作
-### 6.1 Deal配置 - Miner有公网IP
+## 5 Deal操作
+### 5.1 Deal配置 - Miner有公网IP
 假设Miner的公网IP为`123.123.73.123`，内网IP为`10.4.0.100`。
 #### (1) MinerIP配置
 修改`$LOTUS_STORAGE_PATH/config.toml`文件中的以下内容：
@@ -36,23 +36,12 @@ lotus-miner net connect /dns4/bootstrap-3.calibration.fildev.network/tcp/1347/p2
 连接成功后会有`connect 12D3KooWQAKmfoAQBDwyaruE1bfFsuekttD974arrkB4G4ZKWk6r: success`这样的返回。
 执行上面的操作后，再次执行`lotus-miner net peers`，应该就能看到不少节点了。
 
-#### (4) 太空竞赛订单过滤
-太空竞赛可以配置Miner只接收官方机器人的订单[参考官方文档](https://docs.filecoin.io/mine/spacerace/#how-do-i-prioritize-deals-from-competition-bots)，将`$LOTUS_STORAGE_PATH/config.toml`文件中的：
-```sh
-[Dealmaking]
-#  Filter = ""
-```
-改为：
-```sh
-Filter = "jq -e '.Proposal.Client == \"t1nslxql4pck5pq7hddlzym3orxlx35wkepzjkm3i\" or .Proposal.Client == \"t1stghxhdp2w53dym2nz2jtbpk6ccd4l2lxgmezlq\" or .Proposal.Client == \"t1mcr5xkgv4jdl3rnz77outn6xbmygb55vdejgbfi\" or .Proposal.Client == \"t1qiqdbbmrdalbntnuapriirduvxu5ltsc5mhy7si\" '"
-```
-
-#### (5) 检查配置
+#### (4) 检查配置
 - 首先通过官方提供的[Ping工具](https://ping.eu/ping)看看能否ping通自己Miner的公网IP；
 - 其次，通过[[Port-chk](https://ping.eu/port-chk/)]查看自己Miner的公网端口是否开放；
 - `telnet 123.123.73.123 1024`(注意替换成自己的IP和端口)看看是否返回`/multistream/1.0.0`。
 
-### 6.2 Deal配置 - Miner无公网IP
+### 5.2 Deal配置 - Miner无公网IP
 如果Miner机器没有公网IP，就需要在边缘网络设备(如路由器，或有公网IP和端口转发服务的服务器)上做公网IP和端口向内网IP和端口的转发，假设公网IP为`123.123.73.123`，Miner的内网IP为`10.4.0.100`。
 #### (1) MinerIP配置
 修改`$LOTUS_STORAGE_PATH/config.toml`文件中的以下内容：
@@ -79,7 +68,7 @@ sudo iptables -t nat -A PREROUTING -p tcp -m tcp --dport 10240 -j DNAT --to-dest
 #### (4) 设置Miner连接的节点
 参照6.1中的设置Miner连接的节点。
 
-### 7.3 Deal常用操作
+### 5.3 Deal常用操作
 ```sh
 # query ask
 lotus client query-ask [t0xxxx]

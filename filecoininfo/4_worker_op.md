@@ -1,21 +1,21 @@
 ## [回目录](../README.md)
 
-## 5 Worker操作
-### 5.1 查看 Worker 列表
+## 4 Worker操作
+### 4.1 查看 Worker 列表
 ```sh
 lotus-miner sealing workers
 ```
-### 5.2 集群配置
+### 4.2 集群配置
 
-**5.2.1. 修改 miner**
+**4.2.1. 修改 miner**
 
 修改 miner `~/.lotusminer/config.toml` 里面的 `ListenAddress` 和 `RemoteListenAddress` ，把这两个变量中的地址都改为 miner 本机的地址:
 ```toml
 [API]
-ListenAddress = "/ip4/192.168.1.100/tcp/2345/http"
-RemoteListenAddress = "192.168.1.100:2345"
+ListenAddress = "/ip4/192.168.1.100/tcp/2344/http"
+RemoteListenAddress = "192.168.1.100:2344"
 ```
-**5.2.2. 配置 worker**
+**4.2.2. 配置 worker**
 
 方法一：使用环境变量
 
@@ -31,7 +31,7 @@ API 为 `~/.lotusminer` 中的 `api`；
 
 在 **启动了 miner 之后**，复制 miner 的 `~/.lotusminer` 目录中的 `token` 和 `api` 到 worker 中的  `~/.lotusminer` （worker 中没有这个目录就手动创建一个），然后启动 worker 即可。
 
-**5.2.3. 启动 worker**
+**4.2.3. 启动 worker**
 ```sh
 lotus-worker run --address=192.168.1.201:2333 --precommit1=false --precommit2=true --commit=true
 

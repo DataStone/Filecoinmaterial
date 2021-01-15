@@ -1,8 +1,8 @@
 ## [回目录](../README.md)
 
-## 3. 节点操作
+## 2. 节点操作
 
-### 3.1 查看节点信息
+### 2.1 查看节点信息
 ```sh
 # 查看本节点所监听的地址:
 lotus net listen
@@ -10,7 +10,7 @@ lotus net listen
 lotus net peers
 ```
 
-### 3.2 手动连接其它节点（命令中的地址为示例地址）
+### 2.2 手动连接其它节点（命令中的地址为示例地址）
 ```sh
 lotus net connect /ip4/47.240.110.221/tcp/44845/p2p/12D3KooWRgxLL84TSkYSjhvhCy5ZNSuJZZzHWp2FXDY7ufqGBmUW
 ```
@@ -21,7 +21,7 @@ lotus net connect /ip4/47.240.110.221/tcp/44845/p2p/12D3KooWRgxLL84TSkYSjhvhCy5Z
 ```
 上述的节点是示例节点，当您在使用该命令的时候，您需要自己去找一个可以使用的节点。
 
-### 3.3 手动下载 proof 参数
+### 2.3 手动下载 proof 参数
 ```sh
 # export IPFS_GATEWAY="https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/"
 ./lotus fetch-params --proving-params 2KiB     # 例如下载 2KiB 扇区对应的 Proof 参数
@@ -36,7 +36,7 @@ export IPFS_GATEWAY="https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs
 ```
 [参考](https://github.com/filecoin-project/lotus/blob/master/documentation/en/local-dev-net.md)
 
-### 3.4 编译参数
+### 2.4 编译参数
 
 #### v28 版本代码的编译命令:
 
@@ -64,12 +64,12 @@ export RUST_LOG=Debug
 ```
 运行 miner 之前加入该参数可以在 miner 的日志中查看更详细的输出信息（底层 rust 代码的输出信息），Log 登记从低到高分别有： Trace、Debug、Info、Warn、Error，Trace 输出的信息最详细，Error 输出的信息最少，仅输入错误信息。
 
-### 4.5 修改 Proofs 文件路径
+### 2.5 修改 Proofs 文件路径
 ```sh
 export FIL_PROOFS_PARAMETER_CACHE=/path/to/proof_params/v28/
 ```
 
-### 3.6 导入导出同步数据：
+### 2.6 导入导出同步数据：
 
 ```sh
 # 导出同步数据（去除无用的消息，保证导出的 car 文件很小）
@@ -81,9 +81,6 @@ export FIL_PROOFS_PARAMETER_CACHE=/path/to/proof_params/v28/
 # 如果不想在导入数据之后启动 daemon，可以加上参数 --halt-after-import
 ./lotus daemon --import-snapshot snapshot.car
 ```
-
-[【官方 5GB 左右的快照】](https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car)，先手动下载好这个 `car` 文件，然后在一个干净的 `.lotus` 目录中导入即可，记得在做任何操作之前先备份数据（**至少需要备份好钱包私钥**：参考 【16.2】 小节）。
-
 参考：[【快速同步数据：Slack】](https://filecoinproject.slack.com/archives/C0179RNEMU4/p1600187096118400)， [【官方文档：Chain sync】](https://github.com/filecoin-project/filecoin-docs/blob/master/docs/get-started/lotus/installation.md#chain-sync)，[【官方文档：create-a-snapshot】](https://docs.filecoin.io/get-started/lotus/chain-snapshots/#create-a-snapshot)
 
 ## [回目录](../README.md)

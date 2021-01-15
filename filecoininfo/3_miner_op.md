@@ -1,8 +1,8 @@
 ## [回目录](../README.md)
 
-## 4 Storage miner 操作
+## 3 Storage miner 操作
 
-### 4.1 查看扇区状态
+### 3.1 查看扇区状态
 ```sh
 # 列举所有扇区信息:
 lotus-miner sectors list
@@ -10,14 +10,14 @@ lotus-miner sectors list
 lotus-miner sectors status --log <SectorID>
 ```
 
-### 4.2 手动修改扇区状态【谨慎操作】
+### 3.2 手动修改扇区状态【谨慎操作】
 ```sh
 lotus-miner sectors update-state --really-do-it <SectorID> <NewSectorStatus>
 # 例如：手动修改扇区 1 的状态为 FaultedFinal 状态
 lotus-miner sectors update-state --really-do-it 1 FaultedFinal
 ```
 
-### 4.3 更改默认存储路径
+### 3.3 更改默认存储路径
 ```sh
 export LOTUS_STORAGE_PATH="/path/to/.lotusminer"
 ```
@@ -31,7 +31,7 @@ export LOTUS_STORAGE_PATH="/path/to/.lotusminer"
   "CanStore": true
 }
 ```
-### 4.4 增加存储路径
+### 3.4 增加存储路径
 ```sh
 # 设置数据存储路径，该路径用来存储最终密封好的数据
 # 执行该命令可能需要一点时间等待
@@ -47,7 +47,7 @@ lotus-miner storage attach --seal --init /path/to/fast_cache
 lotus-miner storage list
 ```
 
-### 4.5 移动存储目录
+### 3.5 移动存储目录
 默认的存储目录 `~/.lotusminer` 可以移动到其他地方。
 移动前最好先停掉 daemon 和 miner。
 移动后，假设新路径为 `/path/to/.lotusminer`，需要手动更改 `/path/to/.lotusminer` 目录下 `storage.json` 中的 `StoragePaths` 为新路径：
@@ -62,18 +62,18 @@ lotus-miner storage list
 ```
 移动后，重启 daemon 和 miner，miner 会重新读取新路径下的所有 sector 信息。
 
-### 4.6 使用远程 daemon（daemon 在其他机器）
+### 3.6 使用远程 daemon（daemon 在其他机器）
 假设daemon在 `192.168.1.100` 机器上，miner在 `192.168.1.101` 机器上：
 1. 修改远程 daemon (192.168.1.100)上 `~/.lotus/config.toml` 中的 `ListenAddress` 为：
 ```toml
 # Default config:
 [API]
-ListenAddress = "/ip4/192.168.1.100/tcp/1234/http"
+ListenAddress = "/ip4/192.168.1.100/tcp/1233/http"
 ```
 2. 将远程 daemon (192.168.1.100) 上 `~/.lotus` 目录下的 `api` 和 `token` 拷贝到 miner 机器(192.168.1.101)的 `~/.lotus` 目录下；
 3. 重启 miner 即可。
 
-### 4.7 启动 miner 参考命令
+### 3.7 启动 miner 参考命令
 
 ```sh
 # 注意空格不能少【以下命令是使用 screen 进行后台启动的方式】
@@ -85,7 +85,7 @@ FIL_PROOFS_USE_GPU_TREE_BUILDER=1 FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1 FIL_PROOFS
 
 ```
 
-### 4.8 FIL 余额操作
+### 3.8 FIL 余额操作
 
 ```sh
 # 从 【Available】 中提取 10 个 FIL 到 【Worker Balance】 中
@@ -94,9 +94,9 @@ FIL_PROOFS_USE_GPU_TREE_BUILDER=1 FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1 FIL_PROOFS
 ./lotus send t01000 10
 ```
 
-[参考](https://filecoinproject.slack.com/archives/CEGB67XJ8/p1588805545137700)
+[参考](https://filecoinproject.slack.com/archives/CEGB67XJ8/p1588805535137700)
 
-### 4.9 更新扇区操作
+### 3.9 更新扇区操作
 
 原来使用 pledge 命令质押的扇区是垃圾扇区，里面的数据都是垃圾数据，为了让这些扇区能够存储有效数据，可以把这些扇区标记为可存储有效数据的扇区：
 
@@ -106,7 +106,7 @@ FIL_PROOFS_USE_GPU_TREE_BUILDER=1 FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1 FIL_PROOFS
 
 [参考](https://docs.filecoin.io/mine/lotus/sector-pledging/#upgrading-pledged-sectors)
 
-### 4.10 移除扇区操作
+### 3.10 移除扇区操作
 
 如何扇区出现问题，或者不想要某个扇区，可以把该扇区删除：
 
@@ -114,7 +114,7 @@ FIL_PROOFS_USE_GPU_TREE_BUILDER=1 FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1 FIL_PROOFS
 ./lotus-miner sectors remove --really-do-it <sector id>
 ```
 
-### 4.11 移除时空证明失败的扇区
+### 3.11 移除时空证明失败的扇区
 
 由于误删、调度错乱等各种原因，导致扇区已提交到了链上，但时空证明失败的问题，可以使用`lotus-shed`，一次性删除链上失败的扇区。
 
