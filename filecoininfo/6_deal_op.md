@@ -1,4 +1,4 @@
-## [回目录](./README.md)
+## [回目录](../README.md)
 
 ## 6 Deal操作
 ### 6.1 Deal配置 - Miner有公网IP
@@ -103,4 +103,4 @@ lotus-miner storage-deals list
 lotus-miner retrieval-deals list
 ```
 
-## [回目录](./README.md)
+## [回目录](../README.md)

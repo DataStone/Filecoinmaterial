@@ -1,4 +1,4 @@
-## [回目录](./README.md)
+## [回目录](../README.md)
 
 ## 3. 节点操作
 
@@ -86,4 +86,4 @@ export FIL_PROOFS_PARAMETER_CACHE=/path/to/proof_params/v28/
 
 参考：[【快速同步数据：Slack】](https://filecoinproject.slack.com/archives/C0179RNEMU4/p1600187096118400)， [【官方文档：Chain sync】](https://github.com/filecoin-project/filecoin-docs/blob/master/docs/get-started/lotus/installation.md#chain-sync)，[【官方文档：create-a-snapshot】](https://docs.filecoin.io/get-started/lotus/chain-snapshots/#create-a-snapshot)
 
-## [回目录](./README.md)
+## [回目录](../README.md)

@@ -1,4 +1,4 @@
-## [回目录](./README.md)
+## [回目录](../README.md)
 
 ## 4 Storage miner 操作
 
@@ -127,4 +127,4 @@ lotus-shed sectors terminate --really-do-it [sectorNum1 sectorNum2 ...]
 ```
 该命令将会发送一条消息，一次性删除错误扇区(注意：会扣币，目前一个扇区大约扣0.1个FIL)。
 
-## [回目录](./README.md)
+## [回目录](../README.md)

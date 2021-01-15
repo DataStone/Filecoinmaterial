@@ -1,4 +1,4 @@
-## [回目录](./README.md)
+## [回目录](../README.md)
 
 ## 7 常用环境变量
 
@@ -78,4 +78,4 @@ FIL_PROOFS_USE_MULTICORE_SDR=1
 
 ```
 
-## [回目录](./README.md)
+## [回目录](../README.md)

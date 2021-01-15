@@ -1,4 +1,4 @@
-## [回目录](./README.md)
+## [回目录](../README.md)
 
 ## 5 Worker操作
 ### 5.1 查看 Worker 列表
@@ -44,4 +44,4 @@ lotus-worker run --listen=192.168.1.201:2333 --precommit1=false --precommit2=tru
   `--precommit1=false`;
 - `commit` 参数是配置 `commit2` 的，`commit1` 无法在 Worker 中启用。
 
-## [回目录](./README.md)
+## [回目录](../README.md)

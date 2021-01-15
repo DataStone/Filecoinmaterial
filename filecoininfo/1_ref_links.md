@@ -1,4 +1,4 @@
-## [回目录](./README.md)
+## [回目录](../README.md)
 
 ## 1.常用链接
 
@@ -46,4 +46,4 @@
     - [官方博客](https://filecoin.io/blog/introducing-the-filecoin-economy/)
     - [中文版](https://filecoin.io/zh-cn/2020-engineering-filecoins-economy-zh-cn.pdf)
 
-## [回目录](./README.md)
+## [回目录](../README.md)

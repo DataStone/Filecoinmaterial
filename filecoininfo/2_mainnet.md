@@ -1,4 +1,4 @@
-## [回目录](./README.md)
+## [回目录](../README.md)
 
 ## 2. 主网
 
@@ -38,4 +38,4 @@
 
 [【主网在这】](https://network.filecoin.io/#mainnet)
 
-## [回目录](./README.md)
+## [回目录](../README.md)
