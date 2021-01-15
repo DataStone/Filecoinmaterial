@@ -1,6 +1,6 @@
 # Filecoinmaterial
 
-# Filecoin 资源分享目录
+# DataStone 研发团队 Filecoin 资源分享目录
 
 ## 1. [常用链接](filecoininfo/1_ref_links.md)
 
