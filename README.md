@@ -18,34 +18,9 @@
 
 
 ## **参考文档**
-- 
 - [Lotus Docs](https://docs.filecoin.io)
 - [Improving connectivity](https://docs.filecoin.io/mine/connectivity/)
 
-
-
-
-
-
-
-
-
-
-## 14. [Scripts](./14_scripts.md)
-
-## 15. [Seal 密封流程](./16_seal_algorithm.md)
-
-## 16. [其它](./17_others.md)
-
-## 17. [常用的两个查看系统资源的工具](./18_useful_tools.md)
-
-## 18. [推荐技术文章](./19_articles.md)
-
-
-## **参考文档**
-- 
-- [Lotus Docs](https://docs.filecoin.io)
-- [Improving connectivity](https://docs.filecoin.io/mine/connectivity/)
 
 
 
