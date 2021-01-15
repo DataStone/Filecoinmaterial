@@ -3,6 +3,7 @@
 ## 1.常用链接
 
 - 主网相关
+    - [【主网地址】](https://network.filecoin.io/#mainnet)
     - [【主网概览：Spacegap】](https://spacegap.github.io/)
     - [【Filecoin 入门：Get Started on Filecoin】](https://docs.filecoin.io/get-started/)
     - [【协议实验室在Filecoin经济中的参与】](https://protocol.ai/blog/pl-participation-in-the-filecoin-economy/)
